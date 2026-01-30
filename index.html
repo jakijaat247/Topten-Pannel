@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BGMI Store Premium Payment</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:#f8f8f8;color:#000}
+
+/* OWNER */
+.owner{text-align:center;font-weight:800;font-size:18px;margin:10px 0}
+
+/* SLIDER */
+.slider-wrapper{padding:0 10px}
+.slider{overflow:hidden;border-radius:22px}
+.slides{display:flex;transition:.8s}
+.slide{min-width:100%}
+.slide img{width:100%;height:250px;object-fit:cover;border-radius:20px}
+.dots{display:flex;justify-content:center;gap:6px;margin:8px 0}
+.dot{width:10px;height:10px;border-radius:50%;background:#ccc}
+.dot.active{background:#000}
+
+/* STORE */
+.store-title{text-align:center;font-size:20px;font-weight:700;margin-top:12px}
+.store-sub{text-align:center;font-size:13px;margin-bottom:12px}
+
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:10px;padding:0 12px}
+.card{background:#fff;border:1px solid #ddd;border-radius:14px;padding:8px;text-align:center;cursor:pointer;transition:.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.card img{width:100%;height:80px;object-fit:contain}
+.card p{font-size:11px;margin:4px 0}
+.price{font-size:12px;font-weight:700;color:#000}
+.price span{color:#8a2be2}
+
+/* TELEGRAM */
+.telegram-box{display:flex;align-items:center;justify-content:center;gap:8px;
+border:2px solid #000;border-radius:40px;padding:10px 18px;
+font-size:18px;font-weight:800;margin:20px;cursor:pointer}
+.telegram-box img{width:30px}
+
+/* POPUP */
+.popup-wrap{position:fixed;inset:0;background:rgba(0,0,0,.6);
+display:none;align-items:center;justify-content:center;z-index:9999}
+.popup-box{width:90%;max-width:420px;background:rgba(255,255,255,.12);
+backdrop-filter:blur(18px);border-radius:24px;padding:28px;
+text-align:center;color:#fff;position:relative}
+.close-btn{position:absolute;top:12px;right:16px;font-size:28px;cursor:pointer}
+
+.popup-title{font-size:22px;font-weight:700}
+.popup-sub{font-size:13px;color:#cce6ff;margin-bottom:16px}
+
+.qr-box{background:#fff;border-radius:16px;padding:12px;margin-bottom:16px}
+.qr-box img{width:170px;height:170px}
+
+/* COPY */
+.copy-section{display:flex;gap:8px;margin:10px 0;
+background:rgba(255,255,255,.1);padding:10px;border-radius:16px}
+.copy-text{flex:1;background:#fff;color:#000;padding:10px;
+border-radius:12px;font-size:14px;transition:.3s}
+.copy-text.blur{filter:blur(5px);user-select:none}
+.copy-btn{width:120px;padding:10px;border:none;border-radius:12px;
+background:#00eaff;font-weight:700;cursor:pointer}
+
+input{width:100%;padding:14px;border:none;border-radius:16px;
+margin:10px 0;text-align:center;font-size:16px}
+
+button.submit{width:100%;padding:12px;border:none;border-radius:18px;
+background:linear-gradient(90deg,#00eaff,#2b8cff);font-weight:700;cursor:pointer}
+
+.status{margin-top:8px;font-weight:700}
+.success{color:#3dffb2}
+.fail{color:#ff6b6b}
+
+/* TEMP ERROR POPUP */
+#error-popup{
+position:fixed;inset:0;background:rgba(0,0,0,0.7);
+display:none;align-items:center;justify-content:center;z-index:10000;
+color:#fff;font-size:16px;font-weight:700;border-radius:16px;
+backdrop-filter:blur(12px);text-align:center;padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="owner">Owner By - @TOPTENMODQ</div>
+
+<!-- SLIDER -->
+<div class="slider-wrapper">
+<div class="slider">
+<div class="slides" id="slides">
+<div class="slide"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/IMG_20260130_222815_486.jpg"></div>
+<div class="slide"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/IMG_20260130_222815_486.jpg"></div>
+<div class="slide"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/IMG_20260130_222815_486.jpg"></div>
+<div class="slide"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/IMG_20260130_222632_231.jpg"></div>
+<div class="slide"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/IMG_20260130_222815_486.jpg"></div>
+</div>
+</div>
+<div class="dots">
+<div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+</div>
+</div>
+
+<div class="store-title">BGMI Hack Store</div>
+<div class="store-sub">100% safe & secure deal</div>
+
+<!-- PRODUCTS (10) -->
+<div class="products">
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-30_22-43-30-201.jpg"><p>Infinite 1Day</p><div class="price">₹ <span>100</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-30_22-43-30-201.jpg"><p>Infinite 7Day</p><div class="price">₹ <span>500</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-30_22-43-30-201.jpg"><p>Infinite 15Day</p><div class="price">₹ <span>700</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-30_22-43-30-201.jpg"><p>Infinite 30Day</p><div class="price">₹ <span>900</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-31_00-56-35-415.jpg"><p>Voltage  7Day</p><div class="price">₹ <span>300</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-31_00-56-35-415.jpg"><p>Pyron    7Day</p><div class="price">₹ <span>300</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-31_00-56-35-415.jpg"><p>Eniminator 7Day</p><div class="price">₹ <span>300</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-31_00-56-35-415.jpg"><p>Auspicious 7Day</p><div class="price">₹ <span>300</span></div></div>
+
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-31_00-56-35-415.jpg"><p>Game Server 7Day</p><div class="price">₹ <span>300</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-31_00-56-35-415.jpg"><p>Game plus 7Day</p><div class="price">₹ <span>300</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-31_00-56-35-415.jpg"><p>One plus 7Day</p><div class="price">₹ <span>300</span></div></div>
+<div class="card" onclick="openPopup()"><img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/Picsart_26-01-31_00-56-35-415.jpg"><p>Tap a tap 7Day</p><div class="price">₹ <span>300</span></div></div>
+</div>
+
+<div class="telegram-box" onclick="window.open('https://t.me/+YxoFc-lizXZhZWI1','_blank')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+@TOPTENMODQ
+</div>
+
+<!-- POPUP -->
+<div class="popup-wrap" id="popup">
+<div class="popup-box">
+<div class="close-btn" onclick="closePopup()">×</div>
+
+<div class="popup-title">PAYMENT GATEWAY</div>
+<div class="popup-sub">Fast • Encrypted • Verified</div>
+
+<div class="qr-box">
+<img src="https://raw.githubusercontent.com/jakijaat247/Topten-Pannel/refs/heads/main/IMG_20260130_222424.jpg">
+</div>
+
+<div class="copy-section">
+<div class="copy-text" id="upiText">toptenowner-harshit@fam</div>
+<button class="copy-btn" onclick="copyUPI()">Copy UPI</button>
+</div>
+
+<input id="utr" maxlength="12" placeholder="Enter 12 Digit UTR">
+<button class="submit" onclick="submitUTR()">Submit UTR</button>
+
+<div class="status" id="status"></div>
+
+<div class="copy-section">
+<div class="copy-text blur" id="keyText">Topten_ko_dm_karo</div>
+<button class="copy-btn" onclick="copyKey()">Copy Key</button>
+</div>
+
+</div>
+</div>
+
+<!-- TEMP ERROR POPUP -->
+<div id="error-popup">❌ UTR गलत है! Telegram पर contact करो।</div>
+
+<script>
+let slide=0;
+setInterval(()=>{
+slide=(slide+1)%5;
+document.getElementById("slides").style.transform=`translateX(-${slide*100}%)`;
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("active"));
+document.querySelectorAll(".dot")[slide].classList.add("active");
+},3000);
+
+const popup=document.getElementById("popup");
+function openPopup(){popup.style.display="flex"}
+function closePopup(){popup.style.display="none"}
+
+function copy(t){
+const i=document.createElement("input");
+i.value=t;document.body.appendChild(i);
+i.select();document.execCommand("copy");
+document.body.removeChild(i);
+}
+
+function copyUPI(){copy(upiText.innerText);alert("UPI Copied")}
+
+let unlocked=false;
+function submitUTR(){
+if(utr.value==="123412347890"){
+status.innerText="✅ Payment Successful";
+status.className="status success";
+keyText.classList.remove("blur");
+unlocked=true;
+}else{
+status.innerText="❌ Payment Failed";
+status.className="status fail";
+showErrorThenRedirect();
+}
+}
+
+function copyKey(){
+if(!unlocked)return alert("Please submit UTR first");
+copy(keyText.innerText);alert("Key Copied");
+}
+
+function showErrorThenRedirect(){
+const err=document.getElementById("error-popup");
+err.style.display="flex";
+setTimeout(()=>{
+err.style.display="none";
+window.open("https://t.me/TOPTENMODQ?text=Hello%20Bro","_blank");
+},3000);
+}
+</script>
+
+</body>
+</html>
